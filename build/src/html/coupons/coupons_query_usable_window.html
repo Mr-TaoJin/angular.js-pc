@@ -1,0 +1,28 @@
+<div class="page_window">
+    <div class="tit_logo"><img src="./images/icrm_logo.png" alt="logo"></div>
+    <div class="tit_top"><span class="mid_line"></span></div>
+    <p class="title" style="margin-bottom: 30px;">
+        <span>优惠券查询</span>
+        <span><img src="./images/close.png" alt="关闭" ng-click="ngDialog_close()"></span>
+    </p>
+    <div class="coupons_cont">
+        <ul class="coupons_ul clear_float">
+            <li ng-click="selected_ed(li)" ng-repeat="li in data.form_data.list_data track by $index">
+                <div class="left_cont">
+                    <strong>{{(li.rebate)*10}}</strong>折
+                    <p>{{li.type |coupontypemark}}</p>
+                </div>
+                <div class="right_cont" ng-class="li.selected">
+                    <span class="msg1">{{(li.rebate)*10}}折{{li.type |coupontypemark}}</span>
+                    <span class="msg2" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">{{li.start_time.slice(0,10)}} 至 {{li.end_time.slice(0,10)}}</span>
+                    <span class="msg3">券号：{{li.coupon_code}}</span>
+                    <span class="msg4">{{li.remark!=''?li.remark:'暂无说明'}}</span>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <div class="btn_wrap" style="margin-top: 30px;">
+        <button class="button emphasize" ng-click="coupons_use()">立即使用</button>
+        <button class="button close_btn" ng-click="ngDialog_close()">关闭</button>
+    </div>
+</div>

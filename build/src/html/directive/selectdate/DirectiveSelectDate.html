@@ -1,0 +1,112 @@
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat!=2&&inputFormat!=1&&inputFormat!=3&&inputFormat!=5&&inputFormat!=4&&inputFormat!=6&&inputFormat!=7&&inputFormat!=8">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd HH:mm:ss',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-class="show?'opacity_1':'opacity_0';"ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+            <i class="icon-remove glyphicon glyphicon-remove"></i>
+        </button>
+    </span>
+</div>
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==1">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue"  ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly"  ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+            <i class="icon-remove glyphicon glyphicon-remove"></i>
+        </button>
+    </span>
+</div>
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==3">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly"  ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+         <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+             <i class="icon-remove glyphicon glyphicon-remove"></i>
+         </button>
+    </span>
+</div>
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;"ng-if="inputFormat==7">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'dd HH:mm:ss',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly  ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly"  ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+         <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+             <i class="icon-remove glyphicon glyphicon-remove"></i>
+         </button>
+    </span>
+</div>
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==2">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'MM-dd',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+         <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+             <i class="icon-remove glyphicon glyphicon-remove"></i>
+         </button>
+    </span>
+</div>
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==5">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'HH:mm:ss',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+            <i class="icon-remove glyphicon glyphicon-remove"></i>
+        </button>
+    </span>
+</div>
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==4">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'yyyy',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue"  ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly"  ng-class="show?'opacity_1':'opacity_0';" ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+            <i class="icon-remove glyphicon glyphicon-remove"></i>
+        </button>
+    </span>
+</div>
+
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==6">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'MM-dd HH:mm:ss',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue" onChange="" ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-class="show?'opacity_1':'opacity_0';"ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar"></i>
+        </button>
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly" ng-click="clear()" ng-class="show?'opacity_0':'opacity_1';">
+            <i class="icon-remove glyphicon glyphicon-remove"></i>
+        </button>
+    </span>
+</div>
+
+<div class="input-data controls input-append date form_time"  ng-time data-date=""   style="position: relative;" ng-if="inputFormat==8">
+    <input class="Wdate" type="text" onclick="WdatePicker({el:this,dateFmt:'yyyy-MM-dd',onpicked: function(){$(this).trigger('change')}})" ng-model="inputValue"  ng-disabled="inputReadonly" readonly ng-change="set_val()">
+    <span style="display: inline-block;    margin-left: -4px;" class="add-on  input-group-btn btn-group-sm" >
+
+        <button class="btn btn-default" type="button" ng-disabled="inputReadonly"  ng-class="show?'opacity_1':'opacity_0';" style="border:none;cursor:pointer;margin-left:2px; " ng-click="click_date()">
+            <i class="icon-th glyphicon glyphicon-calendar" style="color:#78ca44;font-size:15px;"></i>
+        </button>
+    </span>
+</div>

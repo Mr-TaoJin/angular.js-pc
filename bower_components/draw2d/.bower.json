@@ -1,0 +1,36 @@
+{
+  "name": "draw2d",
+  "version": "6.1.65",
+  "main": [
+    "dist/jquery.autoresize.js",
+    "dist/jquery-touch_punch.js",
+    "dist/jquery.contextmenu.js",
+    "dist/patched_raphael.js",
+    "dist/rgbcolor.js",
+    "dist/patched_canvg.js",
+    "dist/patched_Class.js",
+    "dist/json2.js",
+    "dist/pathfinding-browser.min.js",
+    "dist/StackBlur.js",
+    "dist/shifty.js",
+    "dist/draw2d.js",
+    "dist/draw2d_core.js"
+  ],
+  "author": "Andreas Herz",
+  "ignore": [],
+  "dependencies": {
+    "jquery": "~1.10.2",
+    "shifty": "~1.4.2"
+  },
+  "homepage": "https://github.com/freegroup/draw2d_js.bower",
+  "_release": "6.1.65",
+  "_resolution": {
+    "type": "version",
+    "tag": "v6.1.65",
+    "commit": "a5abe613bbbb94efd0ad3e224415c1d10ae24a77"
+  },
+  "_source": "https://github.com/freegroup/draw2d_js.bower.git",
+  "_target": "^6.1.65",
+  "_originalSource": "draw2d",
+  "_direct": true
+}
