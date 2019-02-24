@@ -1,84 +1,20 @@
 angular.module('myService', [])
-    .factory('api', ['$rootScope', '$http', '$location', '$q', 'Popup','$routeParams','ngDialog',
-        function ($rootScope, $http, $location, $q, Popup,$routeParams,ngDialog) {
-            //本地文件配置
-            var request_demo = function (api_name, api_parm) {
-                var post_url = "../api_demo/" + api_name + ".json";
-                return $http.get(post_url, api_parm).then(function (ret) {
-                    if (ret.data.status == 1) {
-                        return ret.data;
-                    } else {
-                        // Popup.notice(ret.data.message);
-                        return false;  //ret.data;
-                    }
-                }).catch(function (ret) {
-                    // Popup.notice('网络访问失败');
-                    return false;
-                });
-            };
-
-            //生成sign
-            var create_sign = function (api_name, param) {
-                var key = 'baison';
-                var secret = "123456";
-                var act = api_name.replace(/\//g, "");//去除/
-                act = act.replace(/(^\s*)|(\s*$)/g, "");//字符串左右去除空格
-                var sign = key + act;
-                // var sign_params={
-                //     'timestamp':param.timestamp,
-                //     'user_info':param.user_info
-                // };
-                //baisonsysuserget_listtimestamp1499915374user_id1user_codeadmin
-                //追加其他参数
-                param = $util.ksort(param);
-                if (Object.keys(param).length != 0) {
-                    for (var i in param) {
-                        if (i != 'sign') {
-                            if (angular.isObject(param[i])) {
-                                for (var k in param[i]) {
-                                    if (angular.isObject(param[i][k])) {
-                                        continue;
-                                    }
-                                    if (param[i][k] != undefined) {
-                                        sign += k + param[i][k];
-                                    }
-                                }
-                            } else {
-                                if (param[i] != undefined) {
-                                    sign += i + param[i];
-                                }
-                            }
-                        }
-                    }
-                }
-
-                sign = $.md5(secret + sign + secret);
-                return sign;
-            }
-
-            //线上配置
+    .factory('api', ['$rootScope', '$http', '$location', '$q', 'Popup', '$routeParams', 'ngDialog',
+        function ($rootScope, $http, $location, $q, Popup, $routeParams, ngDialog) {
             //请求接口方法
             /**
-             * api_name 接口名称 例如 base/customer/get_list
+             * api_name 接口名称 例如 customer/get_list
              * api_parm 请求参数 例如 {'search_data': {'code': '001', 'status': 1}}
              * http_parm http参数 例如 {'responseType': 'arraybuffer'}
              */
             var request = function (api_name, api_parm, http_parm) {
                 var post_url = __config_sys__.api_path + '?app_act=' + api_name;
-
-
                 //提交请求时附加上当前操作人信息
                 if (api_parm) {
                     api_parm.user_info = {
                         // user_code: '13761612240',
                         // shop_code: '01I-000'
-                        user_code: $routeParams.user_code,
-                        shop_code: $routeParams.shop_code
                     }
-                    //安全测试提交请求增加时间戳
-                    var timestamp = Date.parse(new Date()) / 1000;
-                    api_parm.timestamp = timestamp;
-                    api_parm.sign = create_sign(api_name, api_parm);
                 }
                 //分页没有传num参数的处理
                 if (api_parm.page_data) {
@@ -90,13 +26,12 @@ angular.module('myService', [])
                     }
                 }
                 return $http.post(post_url, api_parm, http_parm).then(function (ret) {
-                    if(ret.data.status == 1){
+                    if (ret.data.status == 1) {
                         return ret.data;
-                    }else if(ret.data.status == -1){
+                    } else if (ret.data.status == -1) {
                         Popup.notice(ret.data.message);
                         return ret.data;
                     }
-
                 }).catch(function (ret) {
                     return false;
                 });
@@ -112,7 +47,7 @@ angular.module('myService', [])
 
             //获取URL请求的地址
             var get_api_url = function (api_name) {
-                var post_url = __config_sys__.api_path + "manage/web/index.php?app_act=" + api_name;
+                var post_url = __config_sys__.api_path + "?app_act=" + api_name;
                 return post_url;
             };
             if (!$rootScope.config_sys) {
@@ -121,7 +56,6 @@ angular.module('myService', [])
             return {
                 "get_api_url": get_api_url,   //获取请求的地址
                 "request": request_route,     //API请求：根据配置是访问正式环境还是静态数据
-                "request_demo": request_demo
             };
 
         }])
@@ -225,10 +159,10 @@ angular.module('myService', [])
         }
 
         //非法字符
-        var check_character = function(input){
-            if((/[^a-zA-Z0-9\_\u4e00-\u9fa5]/.test(input))){
+        var check_character = function (input) {
+            if ((/[^a-zA-Z0-9\_\u4e00-\u9fa5]/.test(input))) {
                 return false;
-            }else{
+            } else {
                 return true;
             }
         }

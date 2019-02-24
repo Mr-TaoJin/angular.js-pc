@@ -79,10 +79,6 @@ myDirective.directive(  "pager", function () {
                 $scope.pageData.num = 15;
             }
 
-
-
-
-        
         }]
     }
 });

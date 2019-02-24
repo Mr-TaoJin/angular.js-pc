@@ -1,0 +1,224 @@
+<div class="page">
+  <div class="manage_top">
+    <ul class="tab clear_float">
+      <li class="active">全部</li>
+    </ul>
+    <span class="search" ng-show="data.tab == 2">查询</span>
+    <div class="search_input" ng-show="data.tab ==2">
+      <input type="text" placeholder="输入客户名称">
+      <i class="glyphicon glyphicon-search"></i>
+    </div>
+  </div>
+  <div class="manage_tab clear_float">
+    <ul>
+      <li><span class="active">全部</span></li>
+      <li><span>竞彩足球</span></li>
+      <li><span>竞彩篮球</span></li>
+      <li><span>胜负彩</span></li>
+      <li><span>任选九</span></li>
+      <li><span>大乐透</span></li>
+      <li><span>七星彩</span></li>
+      <li><span>排列三</span></li>
+      <li><span>排列五</span></li>
+    </ul>
+  </div>
+  <div class="manage_tab_second clear_float">
+    <ul>
+      <li ng-class="data.tab==1?'active':''" ng-click="tab_toggle(1)">待打票<span>3</span></li>
+      <li ng-class="data.tab==2?'active':''" ng-click="tab_toggle(2)">待开奖<span>3</span></li>
+      <li ng-class="data.tab==3?'active':''" ng-click="tab_toggle(3)">已撤单<span>3</span></li>
+      <li ng-class="data.tab==4?'active':''" ng-click="tab_toggle(4)">已中奖<span>3</span></li>
+      <li ng-class="data.tab==5?'active':''" ng-click="tab_toggle(5)">未中奖<span>3</span></li>
+    </ul>
+  </div>
+  <!-- 待打票 -->
+  <div class="table_box" ng-show="data.tab == 1">
+    <table>
+      <tr>
+        <th>订单编号</th>
+        <th>客户</th>
+        <th>彩种</th>
+        <th>金额</th>
+        <th>下单时间</th>
+        <th>截止时间</th>
+        <th class="wid_width">操作</th>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>6小时40分后截止</td>
+        <td><span class="btn">出票</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>6小时40分后截止</td>
+        <td><span class="btn">出票</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>6小时40分后截止</td>
+        <td><span class="btn">出票</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>6小时40分后截止</td>
+        <td><span class="btn">出票</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>6小时40分后截止</td>
+        <td><span class="btn">出票</span></td>
+      </tr>
+      
+    </table>
+  </div>
+  <!-- 待开奖 -->
+  <div class="table_box" ng-show="data.tab == 2">
+    <table>
+      <tr>
+        <th>订单编号</th>
+        <th>客户</th>
+        <th>彩种</th>
+        <th>金额</th>
+        <th>下单时间</th>
+        <th>中奖状态</th>
+        <th class="wid_width">操作</th>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>--</td>
+        <td><span class="btn" ng-click="goto('/toTheLotteryDetail/'+10)">查看</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>--</td>
+        <td><span class="btn">查看</span></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 已撤单 -->
+  <div class="table_box" ng-show="data.tab == 3">
+    <table>
+      <tr>
+        <th>订单编号</th>
+        <th>客户</th>
+        <th>彩种</th>
+        <th>金额</th>
+        <th>下单时间</th>
+        <th>撤单时间</th>
+        <th class="wid_width">操作</th>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>02-21 15:30：47</td>
+        <td><span class="btn" ng-click="goto('/revokeDetail/'+11)">查看</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>02-21 15:30：47</td>
+        <td><span class="btn">查看</span></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 已中奖 -->
+  <div class="table_box" ng-show="data.tab == 4">
+    <table>
+      <tr>
+        <th>订单编号</th>
+        <th>客户</th>
+        <th>彩种</th>
+        <th>金额</th>
+        <th>下单时间</th>
+        <th>撤单时间</th>
+        <th class="wid_width">操作</th>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td class="red_font">已中奖</td>
+        <td><span class="btn" ng-click="goto('/winningDetail/'+12)">查看</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td class="red_font">已中奖</td>
+        <td><span class="btn">查看</span></td>
+      </tr>
+    </table>
+  </div>
+  <!-- 未中奖 -->
+  <div class="table_box" ng-show="data.tab == 5">
+    <table>
+      <tr>
+        <th>订单编号</th>
+        <th>客户</th>
+        <th>彩种</th>
+        <th>金额</th>
+        <th>下单时间</th>
+        <th>撤单时间</th>
+        <th class="wid_width">操作</th>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>未中奖</td>
+        <td><span class="btn" ng-click="goto('/noWinningDetail/'+1000)">查看</span></td>
+      </tr>
+      <tr>
+        <td>20182216216226</td>
+        <td>1500626262266</td>
+        <td>竞彩足球混合跟单</td>
+        <td>100.00</td>
+        <td>02-21 15:30：47</td>
+        <td>未中奖</td>
+        <td><span class="btn">查看</span></td>
+      </tr>
+    </table>
+  </div>
+  <Pager page-data="data.page_data" page-func="form_search"></Pager>
+  
+</div>
