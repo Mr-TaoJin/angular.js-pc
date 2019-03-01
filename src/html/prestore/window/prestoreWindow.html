@@ -1,0 +1,35 @@
+<style>
+    .tit{
+        font-size:14px;
+        padding:5px 0;
+    }
+    .tit .tit_float{
+        float: right;
+    }
+    .tit .tit_weight{
+        color:#000;
+        font-weight: bold;
+    }
+    .input_x{
+        width: 100%;
+        height: 40px;;
+        padding-left:10px;
+    }
+    .msg{
+        padding:5px 0;
+        font-size:14px;
+    }
+</style>
+<div class="window_pop">
+    <p>预存</p>
+    <p class="tit">
+        <span class="tit_weight">你的曝光的</span>
+        <span class="tit_float">余额：100.00</span>
+    </p>
+    <input class="input_x" type="text" placeholder="请输入预存金额">
+    <p class="msg">请确认已收到彩民的预存款</p>
+    <div class="text_center" style="margin-top:20px;">
+        <span class="btn" ng-click="ngDialog_close()">取消</span>
+        <span class="btn ok">确定</span>
+    </div>
+</div>

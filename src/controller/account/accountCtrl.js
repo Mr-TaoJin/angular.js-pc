@@ -1,4 +1,4 @@
-var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
+var accountCtrl = ['$rootScope', '$scope', 'api','ngDialog',
   function ($rootScope, $scope, api ,ngDialog) {
 
     var data = {
@@ -16,7 +16,7 @@ var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
       }
 
     }
-    $rootScope.is_checked = 2;//导航
+    $rootScope.is_checked = 3;//导航
     $rootScope.is_service_show = false;//是否显示客服
     $scope.data = data;
 
@@ -45,20 +45,20 @@ var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
     }
 
     // 预存弹窗
-    var open_prestore_window_id = 0;
-    $scope.open_prestore_window = function () {
-      open_prestore_window_id = ngDialog.open({
+    var open_account_window_id = 0;
+    $scope.open_account_window = function () {
+      open_account_window_id = ngDialog.open({
         overlay: true,
         disableAnimation: false,
         showClose: false,
         closeByDocument: true,
         width: '350px',
-        template: __config_sys__.src_path + 'html/prestore/window/prestoreWindow.html',
+        template: __config_sys__.src_path + 'html/account/window/accountWindow.html',
         scope: $scope,
         controller: ['$scope', function ($scope, ) {
           // 关闭弹框
           $scope.ngDialog_close = function () {
-            ngDialog.close(open_prestore_window_id.id)
+            ngDialog.close(open_account_window_id.id)
           }
         }]
       });
@@ -66,4 +66,4 @@ var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
 
   }];
 
-prestoreCtrl.$injector = ['$rootScope', '$scope', 'api' ,'ngDialog'];
+  accountCtrl.$injector = ['$rootScope', '$scope', 'api' ,'ngDialog'];

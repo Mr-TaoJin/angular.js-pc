@@ -1,0 +1,116 @@
+<div class="page">
+  <div class="manage_top">
+    <ul class="tab clear_float">
+      <li ng-class="data.tab == 1?'active':''" ng-click="data.tab=1">全部</li>
+      <li ng-class="data.tab == 2?'active':''" ng-click="data.tab=2">原客户平台</li>
+    </ul>
+    <span class="search">查询</span>
+    <div class="search_input">
+      <input type="text" placeholder="输入客户名称">
+      <i class="glyphicon glyphicon-search"></i>
+    </div>
+  </div>
+  <div ng-show="data.tab == 1">
+    <div class="customer_box">
+      <table>
+        <tr class="c_tr">
+          <td>累计客户</td>
+          <td>累计预存</td>
+          <td>累计清账</td>
+          <td>累计单量</td>
+          <td>累计出票</td>
+          <td>累计派奖</td>
+        </tr>
+        <tr class="c_td">
+          <td>223人</td>
+          <td>20034元</td>
+          <td>10002元</td>
+          <td>78单</td>
+          <td>12223元</td>
+          <td>29293元</td>
+        </tr>
+      </table>
+    </div>
+    <div class="table_box">
+      <table>
+        <tr>
+          <th>微信昵称</th>
+          <th>备注名</th>
+          <th>绑定手机</th>
+          <th>注册时间</th>
+          <th>余额</th>
+          <th style="width: 340px;">操作</th>
+        </tr>
+        <tr>
+          <td>外打副本呢</td>
+          <td class="gray" ng-click="open_remark_window()">
+            <span>未设置</span>
+            <img class="img_td" src="./images/remark.png" alt="">
+          </td>
+          <td class="gray">未绑定</td>
+          <td>02-21 16:14:47</td>
+          <td>100.00</td>
+          <td>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">预存</span>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">清账</span>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">查看</span>
+          </td>
+        </tr>
+        <tr>
+          <td>外打副本呢</td>
+          <td ng-click="open_remark_window()">
+            <span>陈光伟</span>
+            <img class="img_td" src="./images/remark.png" alt="">
+          </td>
+          <td>15007152233</td>
+          <td>02-21 16:14:47</td>
+          <td>100.00</td>
+          <td>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">预存</span>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">清账</span>
+            <span class="btn" ng-click="goto('/customerDetail/'+1000)">查看</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div ng-show="data.tab == 2">
+    <div class="table_box" style="margin-top:8px;">
+      <table>
+        <tr>
+          <th>微信昵称</th>
+          <th>备注名</th>
+          <th>绑定手机</th>
+          <th>注册时间</th>
+          <th>余额</th>
+          <th style="width: 340px;">操作</th>
+        </tr>
+        <tr>
+          <td>外打副本呢</td>
+          <td class="gray" ng-click="open_remark_window()">
+            <span>未设置</span>
+          </td>
+          <td class="gray">未绑定</td>
+          <td>02-21 16:14:47</td>
+          <td>100.00</td>
+          <td>
+            <span class="btn" ng-click="open_transfer_big_window()">转移余额</span>
+          </td>
+        </tr>
+        <tr>
+          <td>外打副本呢</td>
+          <td ng-click="open_remark_window()">
+            <span>陈光伟</span>
+          </td>
+          <td>15007152233</td>
+          <td>02-21 16:14:47</td>
+          <td>100.00</td>
+          <td>
+            <span class="btn" ng-click="open_delete_big_window()">删除</span>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>

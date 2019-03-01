@@ -1,0 +1,80 @@
+<style>
+    .tit{
+            font-size:14px;
+            padding:5px 0;
+        }
+        .tit .tit_float{
+            float: right;
+        }
+        .tit .tit_weight{
+            color:#000;
+            font-weight: bold;
+        }
+        .input_x{
+            width: 100%;
+            height: 40px;;
+            padding-left:10px;
+            margin:10px 0;
+        }
+        .msg{
+            padding:5px 0;
+            font-size:14px;
+        }
+        .select_pop{
+            padding:10px 0;
+        }
+        .select_pop select{
+            width: 70px;
+            height:30px;
+            border-radius: 5px;
+        }
+    </style>
+<div class="window_pop">
+    <p>修改营业时间</p>
+    <p style="margin-top:10px;">周一到周五（营业时间外下单提示店铺休息）</p>
+    <div class="select_pop">
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.hours" value="x">{{x}}</option>
+        </select>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.minutes" value="x">{{x}}</option>
+        </select>
+        <span>至</span>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.hours" value="x">{{x}}</option>
+        </select>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.minutes" value="x">{{x}}</option>
+        </select>
+    </div>
+    <p style="margin-top:10px;">周六到周日（营业时间外下单提示店铺休息）</p>
+    <div class="select_pop">
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.hours" value="x">{{x}}</option>
+        </select>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.minutes" value="x">{{x}}</option>
+        </select>
+        <span>至</span>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.hours" value="x">{{x}}</option>
+        </select>
+        <select>
+            <option value="">请选择</option>
+            <option ng-repeat="x in data.minutes" value="x">{{x}}</option>
+        </select>
+    </div>
+    <p>请输入登录密码</p>
+    <input class="input_x" type="text" placeholder="">
+    <div class="text_center" style="margin-top:20px;">
+        <span class="btn" ng-click="ngDialog_close()">取消</span>
+        <span class="btn ok">确定</span>
+    </div>
+</div>

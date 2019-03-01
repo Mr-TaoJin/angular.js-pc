@@ -1,4 +1,4 @@
-var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
+var prestoreDetailCtrl = ['$rootScope', '$scope', 'api','ngDialog',
   function ($rootScope, $scope, api ,ngDialog) {
 
     var data = {
@@ -44,26 +44,6 @@ var prestoreCtrl = ['$rootScope', '$scope', 'api','ngDialog',
       $scope.notice('请求成功');
     }
 
-    // 预存弹窗
-    var open_prestore_window_id = 0;
-    $scope.open_prestore_window = function () {
-      open_prestore_window_id = ngDialog.open({
-        overlay: true,
-        disableAnimation: false,
-        showClose: false,
-        closeByDocument: true,
-        width: '350px',
-        template: __config_sys__.src_path + 'html/prestore/window/prestoreWindow.html',
-        scope: $scope,
-        controller: ['$scope', function ($scope, ) {
-          // 关闭弹框
-          $scope.ngDialog_close = function () {
-            ngDialog.close(open_prestore_window_id.id)
-          }
-        }]
-      });
-    }
-
   }];
 
-prestoreCtrl.$injector = ['$rootScope', '$scope', 'api' ,'ngDialog'];
+  prestoreDetailCtrl.$injector = ['$rootScope', '$scope', 'api' ,'ngDialog'];

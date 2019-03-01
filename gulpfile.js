@@ -35,13 +35,13 @@ gulp.task('copyconfig',function(){
         './src/script/config.js',
     ]).pipe(gulp.dest('./build'));
 });
-gulp.task('copyWdatePicker',function(){
-    return gulp.src([
-        './bower_components/My97DatePicker/**/*',
-        './bower_components/My97DatePicker/**/**/*',
-        './bower_components/My97DatePicker/*.js',
-    ]).pipe(gulp.dest('./build/My97DatePicker'));
-});
+// gulp.task('copyWdatePicker',function(){
+//     return gulp.src([
+//         './bower_components/My97DatePicker/**/*',
+//         './bower_components/My97DatePicker/**/**/*',
+//         './bower_components/My97DatePicker/*.js',
+//     ]).pipe(gulp.dest('./build/My97DatePicker'));
+// });
 gulp.task('minifycss_lib', function () {
     return gulp.src([
         "./bower_components/bootstrap/dist/css/bootstrap.min.css",
@@ -85,18 +85,6 @@ gulp.task('minifyjs',['minify_workflow','minify_lib'], function () {
         .pipe(gulp.dest('./dist'))        //输出到文件夹
         .pipe(rename({ suffix: '.min' })) //rename压缩后的文件名
         .pipe(uglify())                   //压缩
-        .pipe(gulp.dest('./build'));      //输出
-});
-
-//合并1 流程设计器相关的库和指令
-gulp.task('minify_workflow',function(){
-    return gulp.src([
-
-    ])                                 //需要操作的文件
-        .pipe(concat('workflow.js'))       //合并所有js到main.js
-        .pipe(gulp.dest('./dist'))        //输出到文件夹
-        .pipe(rename({ suffix: '.min' }))  //rename压缩后的文件名
-        .pipe(uglify())                    //压缩
         .pipe(gulp.dest('./build'));      //输出
 });
 //合并2 第三方引用js合并

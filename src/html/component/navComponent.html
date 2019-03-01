@@ -7,9 +7,9 @@
     <ul class="nav_mid">
       <li ng-class="is_checked==1?'check':''" ng-click="goto('/home')"><span>订单管理</span><i ng-show="true">3</i></li>
       <li ng-class="is_checked==2?'check':''" ng-click="goto('/prestore')"><span>预存管理</span><i ng-show="true">3</i></li>
-      <li ng-class="is_checked==3?'check':''"><span>清账管理</span><i ng-show="true">3</i></li>
-      <li ng-class="is_checked==4?'check':''"><span>客户管理</span><i ng-show="true">3</i></li>
-      <li ng-class="is_checked==5?'check':''"><span>个人中心</span><i ng-show="false">3</i></li>
+      <li ng-class="is_checked==3?'check':''" ng-click="goto('/account')"><span>清账管理</span><i ng-show="true">3</i></li>
+      <li ng-class="is_checked==4?'check':''" ng-click="goto('/customer')"><span>客户管理</span><i ng-show="true">3</i></li>
+      <li ng-class="is_checked==5?'check':''" ng-click="goto('/center')"><span>个人中心</span><i ng-show="false">3</i></li>
     </ul>
     <img class="nav_login" ng-click="open_logout_window()" src="./images/login_index.png" alt="">
     <img class="nav_service" ng-show="is_service_show" ng-click="open_service_window()" src="./images/service.png" alt="">

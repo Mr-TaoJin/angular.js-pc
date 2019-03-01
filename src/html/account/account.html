@@ -3,9 +3,9 @@
     <ul class="tab clear_float">
       <li class="active">全部</li>
     </ul>
-    <span class="search" ng-show="data.tab == 2">查询</span>
-    <div class="search_input" ng-show="data.tab ==2">
-      <input type="text" placeholder="输入客户名称">
+    <span class="search">查询</span>
+    <div class="search_input">
+      <input type="text" placeholder="输入订单编号">
       <i class="glyphicon glyphicon-search"></i>
     </div>
   </div>
@@ -14,13 +14,13 @@
       <span class="tit">外打副本呢</span>
       <span>预存时间：2019-02-22 17:30</span>
       <span>预存金额：100.00</span>
-      <span class="btn_float" ng-click="open_prestore_window()">点击处理</span>
+      <span class="btn_float" ng-click="open_account_window()">点击处理</span>
     </p>
     <p class="child_x">
       <span class="tit">外打副本呢</span>
       <span>预存时间：2019-02-22 17:30</span>
       <span>预存金额：100.00</span>
-      <span class="btn_float" ng-click="open_prestore_window()">点击处理</span>
+      <span class="btn_float" ng-click="open_account_window()">点击处理</span>
     </p>
   </div>
   <div class="table_box">
@@ -39,7 +39,7 @@
         <td class="gray">未绑定</td>
         <td>02-21 16:14:47</td>
         <td>100.00</td>
-        <td><span class="btn" ng-click="goto('/prestoreDetail/'+1000)">预存</span></td>
+        <td><span class="btn" ng-click="goto('/accountDetail/'+1000)">清账</span></td>
       </tr>
       <tr>
         <td>外打副本呢</td>
@@ -47,7 +47,7 @@
         <td>15007152233</td>
         <td>02-21 16:14:47</td>
         <td>100.00</td>
-        <td><span class="btn" ng-click="goto('/prestoreDetail/'+1000)">预存</span></td>
+        <td><span class="btn" ng-click="goto('/accountDetail/'+1000)">清账</span></td>
       </tr>
     </table>
   </div>

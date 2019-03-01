@@ -42,8 +42,16 @@ var myApp = angular.module('myApp', [
             .when('/fiveArrayDetail/:id', { templateUrl: __config_sys__.src_path + 'html/detail/fiveArrayDetail.html', controller: fiveArrayDetailCtrl })
             // 预存管理
             .when('/prestore', { templateUrl: __config_sys__.src_path + 'html/prestore/prestore.html', controller: prestoreCtrl })
+            .when('/prestoreDetail/:id', { templateUrl: __config_sys__.src_path + 'html/prestore/prestoreDetail.html', controller: prestoreDetailCtrl })
+            // 清账管理
+            .when('/account', { templateUrl: __config_sys__.src_path + 'html/account/account.html', controller: accountCtrl })
+            .when('/accountDetail/:id', { templateUrl: __config_sys__.src_path + 'html/account/accountDetail.html', controller: accountDetailCtrl })
+            // 客户管理
+            .when('/customer', { templateUrl: __config_sys__.src_path + 'html/customer/customer.html', controller: customerCtrl })
+            .when('/customerDetail/:id', { templateUrl: __config_sys__.src_path + 'html/customer/customerDetail.html', controller: customerDetailCtrl })
+            // 个人中心
+            .when('/center', { templateUrl: __config_sys__.src_path + 'html/center/center.html', controller: centerCtrl })
             // 待开奖详情
             .otherwise({ redirectTo: '/home' });
-
     }
     ]);
