@@ -153,6 +153,23 @@ input[type=checkbox], input[type=radio] {
     font-size: 12px;
     margin-top: 10px;
 }
+/* 弹窗页面 */
+.window_pop .page_pop{
+    text-align: center;
+}
+.window_pop .page_pop em{
+    font-style: normal;
+}
+.window_pop .page_pop .count{
+    display: inline-block;
+    width: 40%;
+}
+.window_pop .page_pop span{
+    cursor: pointer;
+}
+.window_pop .page_pop .active{
+    color:#3366FF;
+}
 /* 登录login */
 .login {
     background: blue;
@@ -687,6 +704,10 @@ input[type=checkbox], input[type=radio] {
 .detail_ul .tit{
     color:#000;
     font-weight: bold;
+}
+.detail_ul .no_data{
+    text-align: center;
+    padding:10px 0;
 }
 /* 个人中心 */
 .center_box{
