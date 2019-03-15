@@ -462,8 +462,12 @@ input[type=checkbox], input[type=radio] {
 }
 .table_box table td p.td_left{
     text-align: left;
-    padding:5px;
+    padding-bottom:10px;
     margin-left:5%;
+    position: relative;
+}
+.table_box table td p.td_left:last-child{
+    padding-bottom:0;
 }
 .table_box table td p.td_left>span{
     display: inline-block;
@@ -471,6 +475,20 @@ input[type=checkbox], input[type=radio] {
 }
 .table_box table td p.td_left>span:first-child{
     width: 100px;
+    position: absolute;
+    top:0;
+    left:0;
+}
+.table_box table td p.td_left>em{
+    display: inline-block;
+    font-style: inherit;
+    width:70%;
+    margin-left:100px;
+}
+.table_box table td p.td_left>em>span{
+    display: inline-block;
+    margin-right:20px;
+    padding-bottom:5px;
 }
 .table_box table td p.pad{
     padding:5px 0;
